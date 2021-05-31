@@ -1,11 +1,12 @@
 import 'package:get/get.dart';
 
 class IndexController extends GetxController {
-  final count = 0.obs;
+  // 是否展示欢迎页
+  bool isloadWelcomePage = true;
 
   @override
   void onInit() {
-    // TODO: implement onInit
+    startCountdownTimer();
     super.onInit();
   }
 
@@ -15,5 +16,10 @@ class IndexController extends GetxController {
   @override
   void onClose() {}
 
-  increment() => count.value++;
+  // 展示欢迎页，倒计时1.5秒之后进入应用
+  Future startCountdownTimer() async {
+    await Future.delayed(Duration(milliseconds: 1500), () {
+      isloadWelcomePage = false;
+    });
+  }
 }
