@@ -38,8 +38,8 @@ class Global {
 
     // 高德地图初始化
     // await AmapService.instance.init(
-    //   iosKey: '00be0682cb3eead3c0b3a2caa65c5395',
-    //   androidKey: '67fa3daaa4d6ad8f88d4d8713b362d30',
+    //   iosKey: 'xxxx',
+    //   androidKey: 'xxxx',
     // );
 
     // 读取设备第一次打开
