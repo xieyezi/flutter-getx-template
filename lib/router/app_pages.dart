@@ -1,5 +1,4 @@
 import 'package:flutter_getx_template/pages/Index/Index_view.dart';
-import 'package:flutter_getx_template/pages/Index/index_binding.dart';
 import 'package:flutter_getx_template/pages/home/home.binding.dart';
 import 'package:flutter_getx_template/pages/home/home_view.dart';
 import 'package:flutter_getx_template/pages/login/login_binding.dart';
@@ -16,7 +15,6 @@ class AppPages {
     GetPage(
       name: AppRoutes.Index,
       page: () => IndexPage(),
-      binding: IndexBinding(),
     ),
     GetPage(
       name: AppRoutes.Login,
