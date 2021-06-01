@@ -61,10 +61,7 @@ class AppBarBack extends StatelessWidget {
             )
           : Container(
               padding: EdgeInsets.only(right: 15),
-              child: Image.asset(
-                'assets/images/common/backbtn.png',
-                color: color,
-              ),
+              child: Icon(Icons.arrow_back_ios_new, size: 24.0, color: Color(0xFF222222)),
             ),
     );
   }
@@ -78,6 +75,6 @@ class MyTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(_title, style: TextStyle(color: color ?? Colors.white, fontSize: 18, fontWeight: FontWeight.w500));
+    return Text(_title, style: TextStyle(color: color ?? Color(0xFF222222), fontSize: 18, fontWeight: FontWeight.w500));
   }
 }

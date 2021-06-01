@@ -6,17 +6,19 @@ import 'package:flutter_getx_template/pages/login/login_view.dart';
 import 'package:flutter_getx_template/pages/splash/spalsh_view.dart';
 import 'package:get/get.dart';
 
-class IndexPage extends GetView<IndexController> {
+class IndexPage extends StatelessWidget {
   const IndexPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: controller.isloadWelcomePage
-          ? SplashPage()
-          : Global.isOfflineLogin
-              ? HomePage()
-              : LoginPage(),
-    );
+    return GetBuilder<IndexController>(builder: (controller) {
+      return Scaffold(
+        body: controller.isloadWelcomePage
+            ? SplashPage()
+            : Global.isOfflineLogin
+                ? HomePage()
+                : LoginPage(),
+      );
+    });
   }
 }

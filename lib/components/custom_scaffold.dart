@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'custom_appbar.dart';
 
 class BaseScaffold extends Scaffold {

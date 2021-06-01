@@ -20,6 +20,7 @@ class IndexController extends GetxController {
   Future startCountdownTimer() async {
     await Future.delayed(Duration(milliseconds: 1500), () {
       isloadWelcomePage = false;
+      update();
     });
   }
 }
