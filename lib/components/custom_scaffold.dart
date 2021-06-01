@@ -7,7 +7,7 @@ class BaseScaffold extends Scaffold {
       PreferredSizeWidget? appBar,
       required Widget body,
       List<Widget>? actions,
-      AppBarBackType leadType = AppBarBackType.Back,
+      AppBarBackType? leadType,
       WillPopCallback? onWillPop,
       Brightness brightness = Brightness.light,
       Widget? floatingActionButton,
@@ -19,7 +19,7 @@ class BaseScaffold extends Scaffold {
           appBar: appBar ??
               MyAppBar(
                 brightness: Brightness.light,
-                leadingType: leadType,
+                leadingType: leadType ?? AppBarBackType.Back,
                 onWillPop: onWillPop,
                 actions: actions ?? [],
                 centerTitle: centerTitle,

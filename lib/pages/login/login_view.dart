@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onTap: () => Get.toNamed(AppRoutes.Home),
+        onTap: () => Get.offAndToNamed(AppRoutes.Home),
         child: Container(
           child: Center(
             child: Text('登录页'),
@@ -19,5 +19,3 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-
-
