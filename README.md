@@ -1,21 +1,15 @@
 # flutter_getx_template
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
 
+Language: 中文简体 | [English](README-EN.md)
+
+<code>![visitors](https://visitor-badge.glitch.me/badge?page_id=xieyezi.flutter-getx-template)</code>
+<code>![flutter version](https://img.shields.io/badge/flutter-2.x-blue)</code>
+<code>![getx version](https://img.shields.io/badge/getx-4.x-blue)</code>
+
+
+基于[`GetX`](https://github.com/jonataslaw/getx) 实现的全新`flutter getx` 模版.
 
 
 
