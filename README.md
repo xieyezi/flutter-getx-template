@@ -220,7 +220,7 @@ final user = User().obs;
 ```
 > 值得注意的是，因为现在`flutter` 有了`null-safety`，所以我们最好给响应式变量一个初始值。
 
-当我们在controller更新了响应式变量时，视图会自动更新渲染。
+当我们在`controller`更新了响应式变量时，视图会自动更新渲染。
 
 但是实际上，你也可以不定义这种响应式变量，例如我们可以这样：
 
@@ -305,7 +305,7 @@ class HomeController extends GetxController {
   void increment() => count.value++;
 }
 ```
-在view里面使用 `Obx(()=>)` 绑定`count`:
+在`view`里面使用 `Obx(()=>)` 绑定`count`:
 
 ```dart
 // home_view
