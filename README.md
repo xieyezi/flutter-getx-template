@@ -326,7 +326,7 @@ class HomePage extends GetView<HomeController> {
 }
 ```
 
-2. GetBuilder<T>
+2. `GetBuilder<T>`
 
 如果你的变量不是`.obs`的，那么我们就使用`GetBuilder<T>`，例如：
 
