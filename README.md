@@ -111,8 +111,11 @@ $ cd home
 2. 在 `home` 目录下，新建以下四个文件：
 
 - `home_view.dart` : 视图(用来实现页面布局)
+
 - `home_contrller.dart` : 控制器(用来实现业务逻辑)
+
 - `home_binding` : 控制器绑定(用来绑定`controller`到`view`)
+
 - `home_model` : 数据模型(用来约定数据模型)
 
 注意：每创建一个页面时，都必须如此做，命名采用 `页面名` + `_` + `key` 这样的形式.
@@ -128,7 +131,7 @@ $ cd home
 └── home_view.dart
 ```
 
-3. 到`router`文件夹下面添加对应路由:
+1. 到`router`文件夹下面添加对应路由:
 
 ```dart
 // app_routes.dart
