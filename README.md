@@ -5,6 +5,7 @@
 Language: 中文简体 | [English](README-EN.md)
 
 <code>![visitors](https://visitor-badge.glitch.me/badge?page_id=xieyezi.flutter-getx-template)</code>
+<code>![null safety](https://img.shields.io/badge/null-safety-blue)</code>
 <code>![flutter version](https://img.shields.io/badge/flutter-2.x-blue)</code>
 <code>![getx version](https://img.shields.io/badge/getx-4.x-blue)</code>
 
@@ -12,6 +13,15 @@ Language: 中文简体 | [English](README-EN.md)
 基于[`getx`](https://github.com/jonataslaw/getx) 实现的全新`flutter getx` 模版，适用于中大型项目的开发.
 
 
+
+### 环境
+
+```
+Flutter 2.2.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision b22742018b (3 weeks ago) • 2021-05-14 19:12:57 -0700
+Engine • revision a9d88a4d18
+Tools • Dart 2.13.0
+```
 
 
 ### lib目录划分
@@ -163,5 +173,25 @@ class AppPages {
 
 完成以上步骤，你就可以愉快的开始开发了.
 
+### 如何写好一个`view`
 
+首先，你需要将你的`class` 继承自 `GetxView<T>`(T 为你的Controller)，例如：
 
+```dart
+class HomePage extends GetView<HomeController> {
+  HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(),
+    );
+  }
+}
+```
+
+`GetxView<HomeController>`  会自动帮你把 `Controller` 注入到 `view` 中，你可以简单理解为它自动帮你执行了以下步骤
+
+```
+
+```
