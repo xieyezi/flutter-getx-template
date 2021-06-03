@@ -350,7 +350,7 @@ class HomeController extends GetxController {
 }
 ```
 
-在 `view` 里面使用 `Obx(()=>)` 绑定`count`:
+在 `view` 里面使用 `GetBuilder<T>` 绑定`count`:
 
 ```dart
 class HomePage extends GetView<HomeController> {
