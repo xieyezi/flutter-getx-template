@@ -14,9 +14,9 @@ Language: 中文简体 | [English](README-EN.md)
 
 
 
-### 目录划分
+### lib目录划分
 
-> 主要解释 `lib` 目录
+
 
 - `common`
   
