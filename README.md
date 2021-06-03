@@ -12,7 +12,12 @@ Language: 中文简体 | [English](README-EN.md)
 
 基于[`getx`](https://github.com/jonataslaw/getx) 实现的全新`flutter getx` 模版，适用于中大型项目的开发.
 
+- 支持`flutter`最新版本的空安全
+- `view` 和 `逻辑` 完全解耦
+- `view` 和 `state` 自动响应
+- 封装了 `dio`、`shared_preferences`等通用模块
 
+and so on...
 
 ### 环境
 
@@ -190,8 +195,12 @@ class HomePage extends GetView<HomeController> {
 }
 ```
 
-`GetxView<HomeController>`  会自动帮你把 `Controller` 注入到 `view` 中，你可以简单理解为它自动帮你执行了以下步骤
+`GetxView<HomeController>` 会自动帮你把 `Controller` 注入到 `view` 中，你可以简单理解为它自动帮你执行了以下步骤
 
+```dart
+final controller = Get.find<HomeController>();
 ```
 
-```
+不必担心 `GetxView<T>` 的性能，因为它仅仅是继承自 `Stateless Widget` ，记住，有了 `getx` 你完全不需要 `Stateful Widget`
+
+
