@@ -180,7 +180,7 @@ class AppPages {
 
 
 
-### 如何写好 `controller`
+### 状态管理
 
 `contrller` 是我们实现业务逻辑的地方，为什么我们要将 业务逻辑和视图分开呢？因为`flutter` 的意大利面式的代码实在是太难维护了，本来`flutter` 的页面布局和样式写在一起就很恶心了，再加上业务逻辑代码的话，实在太难以维护，而且，如果我们想要拥有状态的话，我们的页面不得不继承自`stateful widget`，性能损耗太严重了。
 
@@ -257,7 +257,7 @@ class HomeController extends GetxController {
 2. 我们应该将发起请求，放在`onInit`钩子里面，例如进入订单页面时，我们应该获取订单信息，就如同在 `stateful wdiget` 里面的`init`钩子一样。
 
 
-### 如何写好 `view`
+### 视图
 
 首先，你需要将你的`class` 继承自 `GetxView<T>`(T 为你的Controller)，例如：
 
@@ -379,3 +379,8 @@ class HomePage extends GetView<HomeController> {
 
 
 其实`getx`还提供了其他的[`render function`](https://github.com/jonataslaw/getx/issues/1499)，但是为了减少心智负担和复杂度，我们就使用这两种就够了。
+
+
+
+### 路由管理
+
