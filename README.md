@@ -353,7 +353,7 @@ class HomeController extends GetxController {
 }
 ```
 
-在view里面使用 `Obx(()=>)` 绑定`count`:
+在 `view` 里面使用 `Obx(()=>)` 绑定`count`:
 
 ```dart
 class HomePage extends GetView<HomeController> {
@@ -376,5 +376,6 @@ class HomePage extends GetView<HomeController> {
   }
 }
 ```
+
 
 其实`getx`还提供了其他的[`render function`](https://github.com/jonataslaw/getx/issues/1499)，但是为了减少心智负担和复杂度，我们就使用这两种就够了。
