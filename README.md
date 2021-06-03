@@ -12,12 +12,12 @@ Language: 中文简体 | [English](README-EN.md)
 
 基于[`getx`](https://github.com/jonataslaw/getx) 实现的全新`flutter getx` 模版，适用于中大型项目的开发.
 
-- 支持`flutter`最新版本的空安全
-- `view` 和 `逻辑` 完全解耦
-- `view` 和 `state` 自动响应
-- 封装了 `dio`、`shared_preferences`等通用模块
+- 💥 `flutter`最新版本的空安全
+- 🍀 `view` 和 `逻辑` 完全解耦
+- ⚡ `view` 和 `state` 自动响应
+- 💨  `dio`、`shared_preferences`等通用模块
 
-and so on...
+🔥等等...
 
 ### 环境
 
