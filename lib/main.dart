@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       unknownRoute: AppPages.unknownRoute,
       builder: EasyLoading.init(),
       locale: TranslationService.locale,
+      fallbackLocale: TranslationService.fallbackLocale,
     );
   }
 }
