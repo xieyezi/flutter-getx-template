@@ -189,7 +189,6 @@ class AppPages {
 1. 一个标准的`contrller`长这样：
 
 ```dart
-
 class HomeController extends GetxController {
   final count = 0.obs;
 
@@ -284,3 +283,98 @@ final controller = Get.find<HomeController>();
 不必担心 `GetxView<T>` 的性能，因为它仅仅是继承自 `Stateless Widget` ，记住，有了 `getx` 你完全不需要 `Stateful Widget`
 
 
+当我们想要绑定`controller`的变量时，我们约定了两种方法：
+
+1. `Obx(()=>)`
+
+如果你的变量是`.obs`的，那么我们就使用`Obx(()=>)`，它会在变量变更时自动刷新`view`，例如：
+
+```dart
+// home_contrller
+class HomeController extends GetxController {
+  final count = 0.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+  }
+
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {}
+
+  void increment() => count.value++;
+}
+```
+在view里面使用 `Obx(()=>)` 绑定`count`:
+
+```dart
+// home_view
+class HomePage extends GetView<HomeController> {
+  HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: Obx(() => Center(child: Text(controller.count.toString()))),
+      ),
+    );
+  }
+}
+```
+
+2. GetBuilder<T>
+
+如果你的变量不是`.obs`的，那么我们就使用`GetBuilder<T>`，例如：
+
+
+```dart
+class HomeController extends GetxController {
+  int count = 0;
+
+  @override
+  void onInit() {
+    super.onInit();
+  }
+
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {}
+
+  void increment() {
+    count++;
+    update();
+  } 
+}
+```
+
+在view里面使用 `Obx(()=>)` 绑定`count`:
+
+```dart
+class HomePage extends GetView<HomeController> {
+  HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BaseScaffold(
+      appBar: MyAppBar(
+        centerTitle: true,
+        title: MyTitle('首页'),
+        leadingType: AppBarBackType.None,
+      ),
+      body: Container(
+        child: GetBuilder<HomeController>(builder: (_) {
+          return Center(child: Text(controller.count.toString()));
+        }),
+      ),
+    );
+  }
+}
+```
+
+其实`getx`还提供了其他的[`render function`](https://github.com/jonataslaw/getx/issues/1499)，但是为了减少心智负担和复杂度，我们就使用这两种就够了。
