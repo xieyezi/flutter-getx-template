@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   final count = 0.obs;
 
-  String userName = 'genji';
+  String userName = 'burnish';
 
   @override
   void onInit() {
@@ -20,7 +20,7 @@ class HomeController extends GetxController {
   void increment() => count.value++;
 
   void changeUserName() {
-    userName = 'jufei';
+    userName = 'juefei';
     update();
   }
 }
