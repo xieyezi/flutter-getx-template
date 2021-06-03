@@ -251,7 +251,7 @@ class HomeController extends GetxController {
 ```
 
 
-这样和`.obs`的唯一区别是，我们需要手动更新状态的变化，这样`view`才能在`count`变化时，收到我们的通知重新渲染。
+这样和`.obs`的唯一区别是，我们需要手动调用 `update()` 更新状态的变化，这样`view`才能在`count`变化时，收到我们的通知重新渲染。
 
 
 2. 我们应该将发起请求，放在`onInit`钩子里面，例如进入订单页面时，我们应该获取订单信息，就如同在 `stateful wdiget` 里面的`init`钩子一样。
