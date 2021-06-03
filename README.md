@@ -151,13 +151,11 @@ $ cd home
 ```dart
 // app_routes.dart
 part of 'app_pages.dart';
-
 abstract class AppRoutes {
   ...
   static const Home = '/home';
   ...
 }
-
 ```
 
 ```dart
@@ -384,3 +382,114 @@ class HomePage extends GetView<HomeController> {
 
 ### 路由管理
 
+这里我们采用了`getx`提供的命名式路由，如果你学过`vue`，那么几乎没有学习成本。
+
+假设我们现在添加了一个页面，叫做`List`，然后我们需要到`router`文件夹下面去配置它：
+
+```dart
+// app_routes.dart
+part of 'app_pages.dart';
+abstract class AppRoutes {
+  ...
+  static const List = '/list';
+  ...
+}
+```
+
+```dart
+// app_pages.dart
+class AppPages {
+
+  static final routes = [
+    ...
+    GetPage(
+      name: AppRoutes.Home,
+      page: () => ListPage(),
+      binding: ListBinding(),
+    ),
+    ...
+  ];
+}
+```
+
+这个`List`对应的假设是订单列表，当我们点击列表中某个订单时，我们通常会进入到订单详情页面，所以我们此时应再添加一个详情页面：
+
+```dart
+// app_routes.dart
+part of 'app_pages.dart';
+abstract class AppRoutes {
+  ...
+  static const List = '/list';
+  static const Detaul = '/detail';
+  ...
+}
+```
+
+```dart
+// app_pages.dart
+class AppPages {
+
+  static final routes = [
+    ...
+    GetPage(
+      name: AppRoutes.Home,
+      page: () => ListPage(),
+      binding: ListBinding(),
+      children: [
+        GetPage(
+          name: AppRoutes.Detail,
+          page: () => DetailPage(),
+          binding: DetailBinding(),
+        ),
+      ],
+    ),
+    ...
+  ];
+}
+```
+因为详情页面和列表页面有先后级关系，所以我们可以将 `Detail` 页面，放到 `List` 的`children` 下面，当然你也可以不这样做。
+
+当我们使用时：
+
+```dart
+Get.toNamed('/list/detail');
+```
+
+
+其他路由钩子：
+
+浏览并删除前一个页面:
+
+```dart
+Get.offNamed("/NextScreen");
+```
+
+浏览并删除所有以前的页面:
+
+```dart
+Get.offAllNamed("/NextScreen");
+```
+
+传递参数：
+
+```dart
+Get.toNamed("/NextScreen", arguments: {id: 'xxx'});
+```
+
+> 参数的类型可以是一个字符串，一个Map，一个List，甚至一个类的实例。
+
+获取参数：
+
+```dart
+print(Get.arguments);
+// print out: `{id: 'xxx'}`
+```
+
+使用 `getx` 的路由它有一个非常好的优点，那就是它是`去context化`的。还记得我们以前被`context` 支配的恐惧吗？ 有了`getx`，它将不复存在。
+
+
+### 官方链接
+
+[状态管理](https://github.com/jonataslaw/getx/blob/master/documentation/zh_CN/state_management.md)
+[路由管理](https://github.com/jonataslaw/getx/blob/master/documentation/zh_CN/route_management.md)
+[依赖管理](https://github.com/jonataslaw/getx/blob/master/documentation/zh_CN/dependency_management.md)
