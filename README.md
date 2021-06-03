@@ -16,7 +16,7 @@ Language: 中文简体 | [English](README-EN.md)
 - 🍀 `view` 和 `逻辑` 完全解耦
 - ⚡ `view` 和 `state` 自动响应
 - 📦  `dio`、`shared_preferences`等通用模块的封装
-- 🔥 去context化
+- 🔥 去`context`化
 
 ### 环境
 
