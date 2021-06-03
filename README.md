@@ -10,12 +10,12 @@ Language: 中文简体 | [English](README-EN.md)
 <code>![getx version](https://img.shields.io/badge/getx-4.x-blue)</code>
 
 
-基于[`getx`](https://github.com/jonataslaw/getx) 实现的全新`flutter getx` 模版，适用于中大型项目的开发.
+基于[`getx`](https://github.com/jonataslaw/getx) 实现的全新`flutter getx` 模版，适用于中大型项目的开发。
 
 - 💥 `flutter`最新版本的空安全
 - 🍀 `view` 和 `逻辑` 完全解耦
 - ⚡ `view` 和 `state` 自动响应
-- 💨  `dio`、`shared_preferences`等通用模块
+- 📦  `dio`、`shared_preferences`等通用模块的封装
 
 🔥等等...
 
@@ -178,7 +178,87 @@ class AppPages {
 
 完成以上步骤，你就可以愉快的开始开发了.
 
-### 如何写好一个`view`
+
+
+### 如何写好 `controller`
+
+`contrller` 是我们实现业务逻辑的地方，为什么我们要将 业务逻辑和视图分开呢？因为`flutter` 的意大利面式的代码实在是太难维护了，本来`flutter` 的页面布局和样式写在一起就很恶心了，再加上业务逻辑代码的话，实在太难以维护，而且，如果我们想要拥有状态的话，我们的页面不得不继承自`stateful widget`，性能损耗太严重了。
+
+所以我们利用 `getx` 提供的 `controller`，将我们的业务逻辑和视图解耦。
+
+1. 一个标准的`contrller`长这样：
+
+```dart
+
+class HomeController extends GetxController {
+  final count = 0.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+  }
+
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {}
+
+  void increment() => count.value++;
+}
+```
+
+当我们需要一个响应式的变量时，我们只需在变量的后面加一个`.obs`，例如：
+
+```dart
+final name = ''.obs;
+final isLogged = false.obs;
+final count = 0.obs;
+final balance = 0.0.obs;
+final number = 0.obs;
+final items = <String>[].obs;
+final myMap = <String, int>{}.obs;
+
+// 甚至自定义类 - 可以是任何类
+final user = User().obs;
+```
+> 值得注意的是，因为现在`flutter` 有了`null-safety`，所以我们最好给响应式变量一个初始值。
+
+当我们在controller更新了响应式变量时，视图会自动更新渲染。
+
+但是实际上，你也可以不定义这种响应式变量，例如我们可以这样：
+
+
+```dart
+class HomeController extends GetxController {
+  int count = 0;
+
+  @override
+  void onInit() {
+    super.onInit();
+  }
+
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {}
+
+  void increment() {
+    count++;
+    update();
+  } 
+}
+```
+
+
+这样和`.obs`的唯一区别是，我们需要手动更新状态的变化，这样`view`才能在`count`变化时，收到我们的通知重新渲染。
+
+
+2. 我们应该将发起请求，放在`onInit`钩子里面，例如进入订单页面时，我们应该获取订单信息，就如同在 `stateful wdiget` 里面的`init`钩子一样。
+
+
+### 如何写好 `view`
 
 首先，你需要将你的`class` 继承自 `GetxView<T>`(T 为你的Controller)，例如：
 
