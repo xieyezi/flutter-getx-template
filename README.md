@@ -487,6 +487,65 @@ print(Get.arguments);
 使用 `getx` 的路由它有一个非常好的优点，那就是它是`去context化`的。还记得我们以前被`context` 支配的恐惧吗？ 有了`getx`，它将不复存在。
 
 
+
+### 使用[monia-cli](https://github.com/xieyezi/monia-cli) 进行开发
+
+我们很高兴，能将 `flutter-getx-template` 加入到 [monia-cli](https://github.com/xieyezi/monia-cli)。
+
+利用 [monia-cli](https://github.com/xieyezi/monia-cli) 新建`flutter`项目：
+
+```
+monia create <project-name>
+```
+
+```
+? Which framework do you want to create Flutter
+? Which flutter version do you want to create null-safety
+? Please input your project description description
+? Please input project version 1.0.0
+
+✨  Creating project in /Users/xieyezi/Desktop/flutter_demo.
+
+🗃  Initializing git repository....
+.......
+⠏ Download template from monia git repository... This might take a while....
+
+🎉  Successfully created project flutter_demo.
+👉  Get started with the following commands:
+
+$ cd flutter_demo
+$ flutter run
+
+                        _                  _ _ 
+  _ __ ___   ___  _ __ (_) __ _        ___| (_)
+ | '_ ` _ \ / _ \| '_ \| |/ _` |_____ / __| | |
+ | | | | | | (_) | | | | | (_| |_____| (__| | |
+ |_| |_| |_|\___/|_| |_|_|\__,_|      \___|_|_|
+```
+
+不仅如此， [monia-cli](https://github.com/xieyezi/monia-cli) 还提供了快速生成一个 `flutter getx` 页面的功能。
+
+假如现在你想生成一个 `order_sending` 新页面，你只需在 `pages` 目录下面输入:
+
+```
+monia init order_sending
+```
+
+```
+➜  pages monia init order_sending
+✨  Generate page in /Users/xieyezi/Desktop/flutter_demo/lib/pages/order_sending.
+⠋ Generating, it's will not be wait long...
+generate order_sending lib success.
+generate /Users/xieyezi/Desktop/flutter_demo/lib/pages/order_sending/order_sending_view.dart file success.
+generate /Users/xieyezi/Desktop/flutter_demo/lib/pages/order_sending/order_sending_controller.dart file success.
+generate /Users/xieyezi/Desktop/flutter_demo/lib/pages/order_sending/order_sending_binding.dart file success.
+
+🎉  Successfully generate page order_sending.
+
+```
+
+
+
 ### 官方链接
 
 [状态管理](https://github.com/jonataslaw/getx/blob/master/documentation/zh_CN/state_management.md)
