@@ -488,7 +488,7 @@ print(Get.arguments);
 
 
 
-### 使用[monia-cli](https://github.com/xieyezi/monia-cli) 进行开发
+### 使用 [monia-cli](https://github.com/xieyezi/monia-cli) 进行开发
 
 我们很高兴，能将 `flutter-getx-template` 加入到 [monia-cli](https://github.com/xieyezi/monia-cli)。
 
