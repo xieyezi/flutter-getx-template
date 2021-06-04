@@ -499,6 +499,7 @@ monia create <project-name>
 ```
 
 ```
+➜  Desktop monia create flutter_demo
 ? Which framework do you want to create Flutter
 ? Which flutter version do you want to create null-safety
 ? Please input your project description description
