@@ -545,6 +545,13 @@ generate /Users/xieyezi/Desktop/flutter_demo/lib/pages/order_sending/order_sendi
 
 ```
 
+### vscode 插件
+
+`monia` 还提供了`vscode` 插件: [monia-vscode-extension](https://marketplace.visualstudio.com/items?itemName=xieyezi.monia-getx-template)
+
+点击左下角的`monia-generate` 文字按钮，输入`pageName`，即可在`pages`目录下新建一个`flutter getx page`：
+
+![example.gif](https://i.loli.net/2021/06/05/rmyXNpOPCLISMu4.gif)
 
 
 ### 官方链接
